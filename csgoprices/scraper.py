@@ -19,16 +19,17 @@ def response(func):
 
 
 class Currency(object):
-    def __init__(self, id, name, symbol):
+    def __init__(self, id, name):
         self.id = id
         self.name = name
-        self.symbol = symbol
 
 
 class Currencies(object):
-    USD = Currency(1, 'USD', '$')
-    GBP = Currency(2, 'GBP', u'\xc2')
-    EUR = Currency(3, 'EUR', u'\xe2')
+    USD = Currency(1, 'USD')
+    GBP = Currency(2, 'GBP')
+    EUR = Currency(3, 'EUR')
+    CHF = Currency(4, 'CHF')
+    RUB = Currency(5, 'RUB')
 
 
 class Scraper(object):

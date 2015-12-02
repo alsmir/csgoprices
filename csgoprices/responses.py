@@ -1,3 +1,4 @@
+import re
 import json
 from csgoprices import utils
 from csgoprices import errors
@@ -5,7 +6,7 @@ from csgoprices import errors
 __ALL__ = ['SteamPriceResponseParser']
 
 def currency_cleaner(value):
-    return int(float(value[1:]) * 100)
+    return re.search('([\d\.|,\d]+)', value.replace(',', '.')).group(1)
 
 def number_cleaner(value):
     return int(value.replace(',', ''))
